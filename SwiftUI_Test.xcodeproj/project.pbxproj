@@ -99,9 +99,10 @@
 			isa = PBXGroup;
 			children = (
 				187CEFFF29F68A4600CD262F /* SwiftUI_TestApp.swift */,
-				187CF00129F68A4600CD262F /* ContentView.swift */,
+				187CF03029F6988800CD262F /* Model */,
+				187CF02F29F6988300CD262F /* View */,
+				187CF03129F698AE00CD262F /* Services */,
 				187CF00329F68A4800CD262F /* Assets.xcassets */,
-				187CF00829F68A4800CD262F /* Persistence.swift */,
 				187CF00A29F68A4800CD262F /* SwiftUI_Test.xcdatamodeld */,
 				187CF00529F68A4800CD262F /* Preview Content */,
 			);
@@ -131,6 +132,29 @@
 				187CF02129F68A4900CD262F /* SwiftUI_TestUITestsLaunchTests.swift */,
 			);
 			path = SwiftUI_TestUITests;
+			sourceTree = "<group>";
+		};
+		187CF02F29F6988300CD262F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				187CF00129F68A4600CD262F /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		187CF03029F6988800CD262F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		187CF03129F698AE00CD262F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				187CF00829F68A4800CD262F /* Persistence.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
