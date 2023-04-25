@@ -9,12 +9,11 @@ import SwiftUI
 
 @main
 struct SwiftUI_TestApp: App {
-    let persistenceController = PersistenceController.shared
-
+    let viewModel = VendorsListVM()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ContentView(viewModel: viewModel)
         }
     }
 }
