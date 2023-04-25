@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  VendorsListView.swift
 //  SwiftUI_Test
 //
 //  Created by Oksana Fedorchuk on 24.04.2023.
@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct VendorsListView: View {
     @ObservedObject var viewModel: VendorsListVM
 
     init(viewModel: VendorsListVM) {
@@ -31,6 +31,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: VendorsListVM())
+        VendorsListView(viewModel: VendorsListVM())
     }
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		187CF00029F68A4600CD262F /* SwiftUI_TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CEFFF29F68A4600CD262F /* SwiftUI_TestApp.swift */; };
-		187CF00229F68A4600CD262F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CF00129F68A4600CD262F /* ContentView.swift */; };
+		187CF00229F68A4600CD262F /* VendorsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CF00129F68A4600CD262F /* VendorsListView.swift */; };
 		187CF00429F68A4800CD262F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187CF00329F68A4800CD262F /* Assets.xcassets */; };
 		187CF00729F68A4800CD262F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187CF00629F68A4800CD262F /* Preview Assets.xcassets */; };
 		187CF00929F68A4800CD262F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CF00829F68A4800CD262F /* Persistence.swift */; };
@@ -44,7 +44,7 @@
 /* Begin PBXFileReference section */
 		187CEFFC29F68A4600CD262F /* SwiftUI_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		187CEFFF29F68A4600CD262F /* SwiftUI_TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_TestApp.swift; sourceTree = "<group>"; };
-		187CF00129F68A4600CD262F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		187CF00129F68A4600CD262F /* VendorsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsListView.swift; sourceTree = "<group>"; };
 		187CF00329F68A4800CD262F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		187CF00629F68A4800CD262F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		187CF00829F68A4800CD262F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 		187CF02F29F6988300CD262F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				187CF00129F68A4600CD262F /* ContentView.swift */,
+				187CF00129F68A4600CD262F /* VendorsListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -333,7 +333,7 @@
 				187CF03D29F6CCC500CD262F /* VendorsParsingModel.swift in Sources */,
 				187CF03F29F6CDE600CD262F /* JSONParsingSevice.swift in Sources */,
 				187CF00929F68A4800CD262F /* Persistence.swift in Sources */,
-				187CF00229F68A4600CD262F /* ContentView.swift in Sources */,
+				187CF00229F68A4600CD262F /* VendorsListView.swift in Sources */,
 				187CF00029F68A4600CD262F /* SwiftUI_TestApp.swift in Sources */,
 				187CF04429F6CF6800CD262F /* VendorCardViewItem.swift in Sources */,
 				187CF00C29F68A4800CD262F /* SwiftUI_Test.xcdatamodeld in Sources */,

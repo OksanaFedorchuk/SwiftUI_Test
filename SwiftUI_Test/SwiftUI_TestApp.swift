@@ -13,7 +13,7 @@ struct SwiftUI_TestApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: viewModel)
+            VendorsListView(viewModel: viewModel)
         }
     }
 }
