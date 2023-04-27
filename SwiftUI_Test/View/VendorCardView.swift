@@ -10,6 +10,7 @@ import SDWebImageSwiftUI
 
 /// Cell used in Vendors list screen.
 struct VendorCardView: View {
+    @Binding var isFavorite: Bool
     var imageURLString: String
     var locationName: String
     var name: String
@@ -17,14 +18,17 @@ struct VendorCardView: View {
     var tags: [String]
     
     var body: some View {
-        VStack(alignment: .leading) {
-            ZStack(alignment: .bottomLeading) {
-                asyncCoverImage
-                locationTag
+        ZStack(alignment: .topTrailing) {
+            VStack(alignment: .leading) {
+                ZStack(alignment: .bottomLeading) {
+                    asyncCoverImage
+                    locationTag
+                }
+                vendorNameText
+                categoriesHGrid
+                tagsText
             }
-            vendorNameText
-            categoriesHGrid
-            tagsText
+            favouriteButton
         }
     }
 }
@@ -132,10 +136,32 @@ private extension VendorCardView {
     }
 }
 
+// MARK:  - FavouriteButton
+private extension VendorCardView {
+    var favouriteButton: some View {
+        Button {
+            isFavorite.toggle()
+        } label: {
+            Image("saveInactive")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 66, height: 66)
+        }
+        .padding(.top, 5)
+    }
+}
+
 // MARK: - Preview
 struct VendorCardView_Previews: PreviewProvider {
     static var previews: some View {
-        VendorCardView(imageURLString: "https://i.imgur.com/OnwEDW3.jpg", locationName: "Newport", name: "Shop name",
-                       categories: [CategoryViewItem (id: 0, name: "Cafe & Restaurant", iconURLString: "https://media-staging.chatsumer.app/48/1830f855-6315-4d3c-a5dc-088ea826aef2.svg"), CategoryViewItem (id: 0, name: "Cafes & Restaurants", iconURLString: "https://media-staging.chatsumer.app/48/1830f855-6315-4d3c-a5dc-088ea826aef2.svg")], tags: ["Teasjnf wlekfnq", "qhewbflwe", "qekwfjnrq wir[e2 pekfko"])
+        VendorCardView(isFavorite: .constant(true),
+                       imageURLString: "https://i.imgur.com/OnwEDW3.jpg", locationName: "Newport", name: "Shop name",
+                       categories: [CategoryViewItem (id: 0,
+                                                      name: "Cafe & Restaurant",
+                                                      iconURLString: "https://media-staging.chatsumer.app/48/1830f855-6315-4d3c-a5dc-088ea826aef2.svg"),
+                                    CategoryViewItem (id: 0,
+                                                      name: "Cafes & Restaurants",
+                                                      iconURLString: "https://media-staging.chatsumer.app/48/1830f855-6315-4d3c-a5dc-088ea826aef2.svg")],
+                       tags: ["Teasjnf wlekfnq", "qhewbflwe", "qekwfjnrq wir[e2 pekfko"])
     }
 }

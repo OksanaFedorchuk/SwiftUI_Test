@@ -68,8 +68,6 @@ private extension VendorsListVM {
                            favorited: vendor.favorited,
                            companyName: vendor.companyName,
                            areaServed: vendor.areaServed,
-                           shopType: vendor.shopType,
-                           businessType: vendor.businessType,
                            coverURLString: vendor.ImageAsset.mediaURL,
                            categories: vendor.categories.map { CategoryViewItem(id: $0.id,
                                                                                 name: $0.name,

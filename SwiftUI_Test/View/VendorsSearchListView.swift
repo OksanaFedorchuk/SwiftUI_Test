@@ -48,13 +48,14 @@ private extension VendorsSearchListView {
     var vendorsList: some View {
         ScrollView {
             LazyVStack {
-                ForEach(viewModel.vendors, id: \.self) { vendor in
+                ForEach(viewModel.vendors.indices, id: \.self) { ind in
                     VStack(spacing: 20) {
-                        VendorCardView(imageURLString: vendor.coverURLString,
-                                       locationName: vendor.areaServed,
-                                       name: vendor.companyName,
-                                       categories: vendor.categories,
-                                       tags: vendor.tags)
+                        VendorCardView(isFavorite: $viewModel.vendors[ind].favorited,
+                                       imageURLString: viewModel.vendors[ind].coverURLString,
+                                       locationName: viewModel.vendors[ind].areaServed,
+                                       name: viewModel.vendors[ind].companyName,
+                                       categories: viewModel.vendors[ind].categories,
+                                       tags: viewModel.vendors[ind].tags)
                     }
                     .padding(.vertical, 12)
                 }
