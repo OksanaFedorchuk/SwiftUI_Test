@@ -6,14 +6,27 @@
 //
 
 import SwiftUI
+import SDWebImage
+import SDWebImageSVGCoder
 
 @main
 struct SwiftUI_TestApp: App {
     let viewModel = VendorsListVM()
     
+    init() {
+        setUpSVGCoder()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: viewModel)
+            VendorsSearchListView(viewModel: viewModel)
         }
+    }
+}
+
+// Initialize SVGCoder
+private extension SwiftUI_TestApp {
+    func setUpSVGCoder() {
+        SDImageCodersManager.shared.addCoder(SDImageSVGCoder.shared)
     }
 }

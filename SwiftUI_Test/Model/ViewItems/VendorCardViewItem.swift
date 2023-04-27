@@ -11,8 +11,8 @@ import Foundation
 /// to render vendor list card.
 struct VendorCardViewItem {
     let id: Int
-    let favorited: Bool
-    let companyName, areaServed, shopType, businessType: String
+    var favorited: Bool
+    let companyName, areaServed: String
     let coverURLString: String
     let categories: [CategoryViewItem]
     let tags: [String]

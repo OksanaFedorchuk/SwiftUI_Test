@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		187CF00029F68A4600CD262F /* SwiftUI_TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CEFFF29F68A4600CD262F /* SwiftUI_TestApp.swift */; };
-		187CF00229F68A4600CD262F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CF00129F68A4600CD262F /* ContentView.swift */; };
 		187CF00429F68A4800CD262F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187CF00329F68A4800CD262F /* Assets.xcassets */; };
 		187CF00729F68A4800CD262F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187CF00629F68A4800CD262F /* Preview Assets.xcassets */; };
 		187CF00929F68A4800CD262F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CF00829F68A4800CD262F /* Persistence.swift */; };
@@ -22,6 +21,13 @@
 		187CF04229F6CE5600CD262F /* VendorsListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CF04129F6CE5600CD262F /* VendorsListVM.swift */; };
 		187CF04429F6CF6800CD262F /* VendorCardViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CF04329F6CF6800CD262F /* VendorCardViewItem.swift */; };
 		18D28C4A29F7EE4C00491484 /* CategoryViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D28C4929F7EE4C00491484 /* CategoryViewItem.swift */; };
+		18D28C4C29F7FC8700491484 /* VendorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D28C4B29F7FC8700491484 /* VendorCardView.swift */; };
+		18D28C4E29F8005000491484 /* Text+FontType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D28C4D29F8005000491484 /* Text+FontType.swift */; };
+		18D28C5929F80C1500491484 /* Open Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18D28C5829F80C1500491484 /* Open Sans Regular.ttf */; };
+		18D28C5B29F80C2200491484 /* Open Sans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18D28C5A29F80C2200491484 /* Open Sans Bold.ttf */; };
+		18D28C6029F916AD00491484 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 18D28C5F29F916AD00491484 /* SDWebImageSwiftUI */; };
+		18D28C6329F916F900491484 /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 18D28C6229F916F900491484 /* SDWebImageSVGCoder */; };
+		18D28C7229FA9F6000491484 /* VendorsSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D28C7129FA9F6000491484 /* VendorsSearchListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +50,6 @@
 /* Begin PBXFileReference section */
 		187CEFFC29F68A4600CD262F /* SwiftUI_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		187CEFFF29F68A4600CD262F /* SwiftUI_TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_TestApp.swift; sourceTree = "<group>"; };
-		187CF00129F68A4600CD262F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		187CF00329F68A4800CD262F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		187CF00629F68A4800CD262F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		187CF00829F68A4800CD262F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -60,6 +65,12 @@
 		187CF04129F6CE5600CD262F /* VendorsListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsListVM.swift; sourceTree = "<group>"; };
 		187CF04329F6CF6800CD262F /* VendorCardViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorCardViewItem.swift; sourceTree = "<group>"; };
 		18D28C4929F7EE4C00491484 /* CategoryViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewItem.swift; sourceTree = "<group>"; };
+		18D28C4B29F7FC8700491484 /* VendorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorCardView.swift; sourceTree = "<group>"; };
+		18D28C4D29F8005000491484 /* Text+FontType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+FontType.swift"; sourceTree = "<group>"; };
+		18D28C5329F8089E00491484 /* SwiftUI-Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SwiftUI-Test-Info.plist"; sourceTree = SOURCE_ROOT; };
+		18D28C5829F80C1500491484 /* Open Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Regular.ttf"; sourceTree = "<group>"; };
+		18D28C5A29F80C2200491484 /* Open Sans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Bold.ttf"; sourceTree = "<group>"; };
+		18D28C7129FA9F6000491484 /* VendorsSearchListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorsSearchListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D28C6029F916AD00491484 /* SDWebImageSwiftUI in Frameworks */,
+				18D28C6329F916F900491484 /* SDWebImageSVGCoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +123,7 @@
 		187CEFFE29F68A4600CD262F /* SwiftUI_Test */ = {
 			isa = PBXGroup;
 			children = (
+				18D28C5329F8089E00491484 /* SwiftUI-Test-Info.plist */,
 				187CEFFF29F68A4600CD262F /* SwiftUI_TestApp.swift */,
 				187CF03029F6988800CD262F /* Model */,
 				187CF02F29F6988300CD262F /* View */,
@@ -117,6 +131,8 @@
 				187CF03129F698AE00CD262F /* Services */,
 				187CF00329F68A4800CD262F /* Assets.xcassets */,
 				187CF00A29F68A4800CD262F /* SwiftUI_Test.xcdatamodeld */,
+				18D28C5829F80C1500491484 /* Open Sans Regular.ttf */,
+				18D28C5A29F80C2200491484 /* Open Sans Bold.ttf */,
 				187CF03929F6CC3E00CD262F /* Mocks */,
 				187CF00529F68A4800CD262F /* Preview Content */,
 			);
@@ -151,7 +167,9 @@
 		187CF02F29F6988300CD262F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				187CF00129F68A4600CD262F /* ContentView.swift */,
+				18D28C7129FA9F6000491484 /* VendorsSearchListView.swift */,
+				18D28C4B29F7FC8700491484 /* VendorCardView.swift */,
+				18D28C6C29FA7AD600491484 /* Modifiers */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +217,14 @@
 			path = ViewItems;
 			sourceTree = "<group>";
 		};
+		18D28C6C29FA7AD600491484 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				18D28C4D29F8005000491484 /* Text+FontType.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,6 +241,10 @@
 			dependencies = (
 			);
 			name = SwiftUI_Test;
+			packageProductDependencies = (
+				18D28C5F29F916AD00491484 /* SDWebImageSwiftUI */,
+				18D28C6229F916F900491484 /* SDWebImageSVGCoder */,
+			);
 			productName = SwiftUI_Test;
 			productReference = 187CEFFC29F68A4600CD262F /* SwiftUI_Test.app */;
 			productType = "com.apple.product-type.application";
@@ -287,6 +317,10 @@
 				Base,
 			);
 			mainGroup = 187CEFF329F68A4600CD262F;
+			packageReferences = (
+				18D28C5E29F916AD00491484 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				18D28C6129F916F900491484 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */,
+			);
 			productRefGroup = 187CEFFD29F68A4600CD262F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -305,6 +339,8 @@
 			files = (
 				187CF00729F68A4800CD262F /* Preview Assets.xcassets in Resources */,
 				187CF00429F68A4800CD262F /* Assets.xcassets in Resources */,
+				18D28C5B29F80C2200491484 /* Open Sans Bold.ttf in Resources */,
+				18D28C5929F80C1500491484 /* Open Sans Regular.ttf in Resources */,
 				187CF03B29F6CC7C00CD262F /* vendors.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,11 +367,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				187CF03D29F6CCC500CD262F /* VendorsParsingModel.swift in Sources */,
+				18D28C4E29F8005000491484 /* Text+FontType.swift in Sources */,
 				187CF03F29F6CDE600CD262F /* JSONParsingSevice.swift in Sources */,
+				18D28C4C29F7FC8700491484 /* VendorCardView.swift in Sources */,
 				187CF00929F68A4800CD262F /* Persistence.swift in Sources */,
-				187CF00229F68A4600CD262F /* ContentView.swift in Sources */,
 				187CF00029F68A4600CD262F /* SwiftUI_TestApp.swift in Sources */,
 				187CF04429F6CF6800CD262F /* VendorCardViewItem.swift in Sources */,
+				18D28C7229FA9F6000491484 /* VendorsSearchListView.swift in Sources */,
 				187CF00C29F68A4800CD262F /* SwiftUI_Test.xcdatamodeld in Sources */,
 				18D28C4A29F7EE4C00491484 /* CategoryViewItem.swift in Sources */,
 				187CF04229F6CE5600CD262F /* VendorsListVM.swift in Sources */,
@@ -500,7 +538,7 @@
 				DEVELOPMENT_TEAM = BKWHC8NZRW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "SwiftUI-Test-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -529,7 +567,7 @@
 				DEVELOPMENT_TEAM = BKWHC8NZRW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "SwiftUI-Test-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -663,6 +701,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		18D28C5E29F916AD00491484 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		18D28C6129F916F900491484 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSVGCoder";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		18D28C5F29F916AD00491484 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18D28C5E29F916AD00491484 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		18D28C6229F916F900491484 /* SDWebImageSVGCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18D28C6129F916F900491484 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */;
+			productName = SDWebImageSVGCoder;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		187CF00A29F68A4800CD262F /* SwiftUI_Test.xcdatamodeld */ = {
