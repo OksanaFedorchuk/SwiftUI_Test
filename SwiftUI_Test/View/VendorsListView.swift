@@ -16,6 +16,36 @@ struct VendorsListView: View {
     }
     
     var body: some View {
+        VStack {
+            searchBar
+            vendorsList
+        }
+        .padding(.horizontal, 16)
+        .background(Color("BackgroundColor"))
+    }
+}
+
+// MARK: -  SearchBar
+private extension VendorsListView {
+    var searchBar: some View {
+        HStack {
+            TextField("Search...", text: $viewModel.searchText)
+                .font(Font.system(size: 21))
+                .foregroundColor(Color("GreySecondary"))
+            Spacer()
+            Image("iconSearch")
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(Color.white)
+        .cornerRadius(16)
+        .shadow(color: .black.opacity(0.05), radius: 14, y: 6)
+    }
+}
+
+// MARK: -  VendorsList
+private extension VendorsListView {
+    var vendorsList: some View {
         ScrollView {
             LazyVStack {
                 ForEach(viewModel.vendors, id: \.self) { vendor in
@@ -26,7 +56,6 @@ struct VendorsListView: View {
                                        categories: vendor.categories,
                                        tags: vendor.tags)
                     }
-                    .padding(.horizontal, 16)
                     .padding(.vertical, 12)
                 }
             }

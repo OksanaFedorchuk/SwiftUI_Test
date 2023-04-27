@@ -10,6 +10,7 @@ import Combine
 
 final class VendorsListVM: ObservableObject {
     @Published var vendors = [VendorCardViewItem]()
+    @Published var searchText = ""
     private let parsingService = JSONParsingService()
     private var cancellables = Set<AnyCancellable>()
     
