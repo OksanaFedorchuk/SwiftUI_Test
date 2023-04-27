@@ -31,22 +31,24 @@ private extension VendorsListVM {
                 }
             }) { [unowned self] (users: Vendors) in
                 users.vendors.forEach {
-                    self.vendors.append(VendorCardViewItem(id: $0.id,
-                                                           favorited: $0.favorited,
-                                                           companyName: $0.companyName,
-                                                           areaServed: $0.areaServed,
-                                                           shopType: $0.shopType,
-                                                           businessType: $0.businessType,
-                                                           coverURLString: $0.ImageAsset.mediaURL,
-                                                           categories: $0.categories.map {
-                        CategoryViewItem(id: $0.id,
-                                         name: $0.name,
-                                         iconURLString: $0.image.mediaURL)
-                    },
-                                                           tags: $0.tags.map { $0.name }))
+                    self.vendors.append(mapVendorCardViewItem(with: $0))
                 }
             }
             .store(in: &cancellables)
+    }
+    
+    func mapVendorCardViewItem(with vendor: Vendor) -> VendorCardViewItem {
+        VendorCardViewItem(id: vendor.id,
+                           favorited: vendor.favorited,
+                           companyName: vendor.companyName,
+                           areaServed: vendor.areaServed,
+                           shopType: vendor.shopType,
+                           businessType: vendor.businessType,
+                           coverURLString: vendor.ImageAsset.mediaURL,
+                           categories: vendor.categories.map { CategoryViewItem(id: $0.id,
+                                                                                name: $0.name,
+                                                                                iconURLString: $0.image.mediaURL) },
+                           tags: vendor.tags.map { $0.name })
     }
     
     func jsonURL() -> URL {
