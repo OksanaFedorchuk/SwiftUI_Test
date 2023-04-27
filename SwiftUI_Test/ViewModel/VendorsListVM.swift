@@ -19,22 +19,31 @@ final class VendorsListVM: ObservableObject {
     }
 }
 
-// MARK: - SubscribeSearchBar
+// MARK: - SubscribeData
 private extension VendorsListVM {
     func subscribeData() {
         $searchText
-            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
-            .removeDuplicates()
-            .sink { [unowned self] searchText in
-                self.getVendors(with: searchText)
+            .debounce(for: 0.5, scheduler: RunLoop.main)
+            .sink { [unowned self] text in
+                if text.count >= 3 {
+                    getVendors {
+                        let filtered = self.vendors.filter { item in
+                            item.companyName.localizedCaseInsensitiveContains(text)
+                        }
+                        self.vendors = filtered
+                    }
+                } else {
+                    getVendors()
+                }
             }
             .store(in: &cancellables)
+        
     }
 }
 
 // MARK:  - GetVendors
 private extension VendorsListVM {
-    func getVendors(with searchText: String) {
+    func getVendors(_ completion: @escaping ()->() = {} ) {
         parsingService.dataTaskPublisher(for: jsonURL())
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
@@ -49,12 +58,7 @@ private extension VendorsListVM {
                 users.vendors.forEach {
                     self.vendors.append(mapVendorCardViewItem(with: $0))
                 }
-                if !searchText.isEmpty {
-                    let filtered = self.vendors.filter { item in
-                        item.companyName.localizedCaseInsensitiveContains(searchText)
-                    }
-                    self.vendors = filtered
-                }
+                completion()
             }
             .store(in: &cancellables)
     }
