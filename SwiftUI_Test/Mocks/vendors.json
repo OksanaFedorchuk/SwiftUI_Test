@@ -24,6 +24,15 @@
           }
         },
         {
+          "id": 79,
+          "name": "Homes",
+          "image": {
+            "id": 3980,
+            "media_url": "https://media-staging.chatsumer.app/48/1830f855-6315-4d3c-a5dc-088ea826aef2.svg",
+            "media_type": "image"
+          }
+        },
+        {
           "id": 41,
           "name": "Fashion Accessories",
           "image": {

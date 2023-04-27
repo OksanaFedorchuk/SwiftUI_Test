@@ -10,20 +10,25 @@ import CoreData
 
 struct VendorsListView: View {
     @ObservedObject var viewModel: VendorsListVM
-
+    
     init(viewModel: VendorsListVM) {
         self.viewModel = viewModel
     }
     
     var body: some View {
-        NavigationView {
-            List {
+        ScrollView {
+            LazyVStack {
                 ForEach(viewModel.vendors, id: \.self) { vendor in
-                    Text("Vendor: \(vendor.companyName), business type: \(vendor.businessType)")
+                    VStack(spacing: 20) {
+                        VendorCardView(imageURLString: vendor.coverURLString,
+                                       locationTag: vendor.areaServed,
+                                       name: vendor.companyName,
+                                       categories: vendor.categories,
+                                       tags: vendor.tags)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 12)
                 }
-            }
-            .onAppear {
-                print("\(String(describing: viewModel.vendors))")
             }
         }
     }

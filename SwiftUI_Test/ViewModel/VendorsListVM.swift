@@ -30,7 +30,6 @@ private extension VendorsListVM {
                 }
             }) { [unowned self] (users: Vendors) in
                 users.vendors.forEach {
-                    print("\($0.companyName)\n")
                     self.vendors.append(VendorCardViewItem(id: $0.id,
                                                            favorited: $0.favorited,
                                                            companyName: $0.companyName,

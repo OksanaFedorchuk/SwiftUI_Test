@@ -14,3 +14,10 @@ struct CategoryViewItem {
     let name: String
     let iconURLString: String
 }
+
+// MARK: - Hashable
+extension CategoryViewItem: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
