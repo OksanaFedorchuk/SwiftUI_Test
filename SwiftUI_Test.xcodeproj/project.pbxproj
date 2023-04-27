@@ -26,7 +26,6 @@
 		18D28C4E29F8005000491484 /* Text+FontType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D28C4D29F8005000491484 /* Text+FontType.swift */; };
 		18D28C5929F80C1500491484 /* Open Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18D28C5829F80C1500491484 /* Open Sans Regular.ttf */; };
 		18D28C5B29F80C2200491484 /* Open Sans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18D28C5A29F80C2200491484 /* Open Sans Bold.ttf */; };
-		18D28C5D29F90F0000491484 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D28C5C29F90F0000491484 /* CategoryView.swift */; };
 		18D28C6029F916AD00491484 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 18D28C5F29F916AD00491484 /* SDWebImageSwiftUI */; };
 		18D28C6329F916F900491484 /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 18D28C6229F916F900491484 /* SDWebImageSVGCoder */; };
 /* End PBXBuildFile section */
@@ -72,7 +71,6 @@
 		18D28C5329F8089E00491484 /* SwiftUI-Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SwiftUI-Test-Info.plist"; sourceTree = SOURCE_ROOT; };
 		18D28C5829F80C1500491484 /* Open Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Regular.ttf"; sourceTree = "<group>"; };
 		18D28C5A29F80C2200491484 /* Open Sans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Bold.ttf"; sourceTree = "<group>"; };
-		18D28C5C29F90F0000491484 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +169,6 @@
 			children = (
 				187CF00129F68A4600CD262F /* VendorsListView.swift */,
 				18D28C4B29F7FC8700491484 /* VendorCardView.swift */,
-				18D28C6B29FA760D00491484 /* Subviews */,
 				18D28C6C29FA7AD600491484 /* Modifiers */,
 			);
 			path = View;
@@ -218,14 +215,6 @@
 				18D28C4929F7EE4C00491484 /* CategoryViewItem.swift */,
 			);
 			path = ViewItems;
-			sourceTree = "<group>";
-		};
-		18D28C6B29FA760D00491484 /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-				18D28C5C29F90F0000491484 /* CategoryView.swift */,
-			);
-			path = Subviews;
 			sourceTree = "<group>";
 		};
 		18D28C6C29FA7AD600491484 /* Modifiers */ = {
@@ -379,7 +368,6 @@
 			files = (
 				187CF03D29F6CCC500CD262F /* VendorsParsingModel.swift in Sources */,
 				18D28C4E29F8005000491484 /* Text+FontType.swift in Sources */,
-				18D28C5D29F90F0000491484 /* CategoryView.swift in Sources */,
 				187CF03F29F6CDE600CD262F /* JSONParsingSevice.swift in Sources */,
 				18D28C4C29F7FC8700491484 /* VendorCardView.swift in Sources */,
 				187CF00929F68A4800CD262F /* Persistence.swift in Sources */,

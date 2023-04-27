@@ -21,7 +21,7 @@ struct VendorsListView: View {
                 ForEach(viewModel.vendors, id: \.self) { vendor in
                     VStack(spacing: 20) {
                         VendorCardView(imageURLString: vendor.coverURLString,
-                                       locationTag: vendor.areaServed,
+                                       locationName: vendor.areaServed,
                                        name: vendor.companyName,
                                        categories: vendor.categories,
                                        tags: vendor.tags)
@@ -34,6 +34,7 @@ struct VendorsListView: View {
     }
 }
 
+// MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         VendorsListView(viewModel: VendorsListVM())
