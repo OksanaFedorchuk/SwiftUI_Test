@@ -27,7 +27,7 @@
 		18D28C5B29F80C2200491484 /* Open Sans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18D28C5A29F80C2200491484 /* Open Sans Bold.ttf */; };
 		18D28C6029F916AD00491484 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 18D28C5F29F916AD00491484 /* SDWebImageSwiftUI */; };
 		18D28C6329F916F900491484 /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 18D28C6229F916F900491484 /* SDWebImageSVGCoder */; };
-		18D28C7229FA9F6000491484 /* VendorsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D28C7129FA9F6000491484 /* VendorsListView.swift */; };
+		18D28C7229FA9F6000491484 /* VendorsSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D28C7129FA9F6000491484 /* VendorsSearchListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +70,7 @@
 		18D28C5329F8089E00491484 /* SwiftUI-Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SwiftUI-Test-Info.plist"; sourceTree = SOURCE_ROOT; };
 		18D28C5829F80C1500491484 /* Open Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Regular.ttf"; sourceTree = "<group>"; };
 		18D28C5A29F80C2200491484 /* Open Sans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Bold.ttf"; sourceTree = "<group>"; };
-		18D28C7129FA9F6000491484 /* VendorsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorsListView.swift; sourceTree = "<group>"; };
+		18D28C7129FA9F6000491484 /* VendorsSearchListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorsSearchListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +167,7 @@
 		187CF02F29F6988300CD262F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				18D28C7129FA9F6000491484 /* VendorsListView.swift */,
+				18D28C7129FA9F6000491484 /* VendorsSearchListView.swift */,
 				18D28C4B29F7FC8700491484 /* VendorCardView.swift */,
 				18D28C6C29FA7AD600491484 /* Modifiers */,
 			);
@@ -373,7 +373,7 @@
 				187CF00929F68A4800CD262F /* Persistence.swift in Sources */,
 				187CF00029F68A4600CD262F /* SwiftUI_TestApp.swift in Sources */,
 				187CF04429F6CF6800CD262F /* VendorCardViewItem.swift in Sources */,
-				18D28C7229FA9F6000491484 /* VendorsListView.swift in Sources */,
+				18D28C7229FA9F6000491484 /* VendorsSearchListView.swift in Sources */,
 				187CF00C29F68A4800CD262F /* SwiftUI_Test.xcdatamodeld in Sources */,
 				18D28C4A29F7EE4C00491484 /* CategoryViewItem.swift in Sources */,
 				187CF04229F6CE5600CD262F /* VendorsListVM.swift in Sources */,

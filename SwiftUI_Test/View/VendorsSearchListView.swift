@@ -1,5 +1,5 @@
 //
-//  VendorsListView.swift
+//  VendorsSearchListView.swift
 //  SwiftUI_Test
 //
 //  Created by Oksana Fedorchuk on 24.04.2023.
@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct VendorsListView: View {
+struct VendorsSearchListView: View {
     @ObservedObject var viewModel: VendorsListVM
     
     init(viewModel: VendorsListVM) {
@@ -26,7 +26,7 @@ struct VendorsListView: View {
 }
 
 // MARK: -  SearchBar
-private extension VendorsListView {
+private extension VendorsSearchListView {
     var searchBar: some View {
         HStack {
             TextField("Search...", text: $viewModel.searchText)
@@ -44,7 +44,7 @@ private extension VendorsListView {
 }
 
 // MARK: -  VendorsList
-private extension VendorsListView {
+private extension VendorsSearchListView {
     var vendorsList: some View {
         ScrollView {
             LazyVStack {
@@ -66,6 +66,6 @@ private extension VendorsListView {
 // MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        VendorsListView(viewModel: VendorsListVM())
+        VendorsSearchListView(viewModel: VendorsListVM())
     }
 }

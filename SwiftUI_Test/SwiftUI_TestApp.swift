@@ -19,7 +19,7 @@ struct SwiftUI_TestApp: App {
     
     var body: some Scene {
         WindowGroup {
-            VendorsListView(viewModel: viewModel)
+            VendorsSearchListView(viewModel: viewModel)
         }
     }
 }
