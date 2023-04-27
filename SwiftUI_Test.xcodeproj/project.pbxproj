@@ -170,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				187CF00129F68A4600CD262F /* VendorsListView.swift */,
+				18D28C4B29F7FC8700491484 /* VendorCardView.swift */,
 				18D28C6B29FA760D00491484 /* Subviews */,
 				18D28C6C29FA7AD600491484 /* Modifiers */,
 			);
@@ -222,7 +223,6 @@
 		18D28C6B29FA760D00491484 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				18D28C4B29F7FC8700491484 /* VendorCardView.swift */,
 				18D28C5C29F90F0000491484 /* CategoryView.swift */,
 			);
 			path = Subviews;
