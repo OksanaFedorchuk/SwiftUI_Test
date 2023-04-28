@@ -188,8 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				187CF03C29F6CCC500CD262F /* VendorsParsingModel.swift */,
-				18D28C4829F7EE3000491484 /* ViewItems */,
 				186B5D0829FBE203002C91D9 /* ErrorWrapper.swift */,
+				18D28C4829F7EE3000491484 /* ViewItems */,
 			);
 			path = Model;
 			sourceTree = "<group>";
