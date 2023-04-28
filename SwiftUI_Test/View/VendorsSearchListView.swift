@@ -18,7 +18,12 @@ struct VendorsSearchListView: View {
     var body: some View {
         VStack {
             searchBar
-            vendorsList
+            ZStack {
+                vendorsList
+                if viewModel.errorWrapper != nil {
+                    errorText
+                }
+            }
         }
         .padding(.horizontal, 16)
         .background(Color.appBackgroundColor)
@@ -61,6 +66,23 @@ private extension VendorsSearchListView {
                 }
             }
         }
+    }
+}
+
+// MARK: -  ErrorText
+private extension VendorsSearchListView {
+    var errorText: some View {
+        VStack(alignment: .center) {
+            Spacer()
+            Text("\(viewModel.errorWrapper?.errorTitle ?? "")")
+                .font(type: .title)
+                .foregroundColor(.appGreen)
+            Text("\(viewModel.errorWrapper?.errorBody ?? "")")
+                .font(type: .subhead)
+                .foregroundColor(.appGreyPrimary)
+            Spacer()
+        }
+        .multilineTextAlignment(.center)
     }
 }
 
