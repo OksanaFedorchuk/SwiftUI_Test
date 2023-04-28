@@ -21,7 +21,7 @@ struct VendorsSearchListView: View {
             vendorsList
         }
         .padding(.horizontal, 16)
-        .background(Color("BackgroundColor"))
+        .background(Color.appBackgroundColor)
     }
 }
 
@@ -29,11 +29,11 @@ struct VendorsSearchListView: View {
 private extension VendorsSearchListView {
     var searchBar: some View {
         HStack {
-            TextField("Search...", text: $viewModel.searchText)
+            TextField(K.Strings.search, text: $viewModel.searchText)
                 .font(Font.system(size: 21))
-                .foregroundColor(Color("GreySecondary"))
+                .foregroundColor(Color.appGreySecondary)
             Spacer()
-            Image("iconSearch")
+            Image.iconSearch
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 8)
