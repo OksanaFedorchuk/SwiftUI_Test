@@ -59,9 +59,9 @@ private extension VendorsListVM {
                 case .failure(let error):
                     self.errorWrapper = ErrorWrapper.init(error: error, errorTitle: "Received unknown error: \(error.localizedDescription)", errorBody: "Please try again later.")
                 }
-            }) { [unowned self] (users: Vendors) in
+            }) { [unowned self] (result: Vendors) in
                 self.vendors = []
-                users.vendors.forEach {
+                result.vendors.forEach {
                     self.vendors.append(mapVendorCardViewItem(with: $0))
                 }
                 self.errorWrapper = nil
