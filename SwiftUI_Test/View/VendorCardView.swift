@@ -54,7 +54,7 @@ private extension VendorCardView {
     var locationTag: some View {
         Text(locationName)
             .font(type: .body)
-            .foregroundColor(Color("GreyPrimary"))
+            .foregroundColor(Color.appGreyPrimary)
             .padding(.horizontal, 8)
             .padding(.vertical, 2)
             .background(.white).opacity(90)
@@ -68,7 +68,7 @@ private extension VendorCardView {
     var vendorNameText: some View {
         Text(name)
             .font(type: .headline)
-            .foregroundColor(Color("GreyPrimary"))
+            .foregroundColor(Color.appGreyPrimary)
     }
 }
 
@@ -119,7 +119,7 @@ private extension VendorCardView {
                     
                     Text(categoryName)
                         .font(type: .body)
-                        .foregroundColor(Color("GreyPrimary"))
+                        .foregroundColor(Color.appGreyPrimary)
                 }
                 
             }
@@ -132,7 +132,7 @@ private extension VendorCardView {
     var tagsText: some View {
         Text("• \(tags.joined(separator: " • "))")
             .font(type: .body)
-            .foregroundColor(Color("GreySecondary"))
+            .foregroundColor(Color.appGreySecondary)
     }
 }
 
@@ -142,7 +142,7 @@ private extension VendorCardView {
         Button {
             isFavorite.toggle()
         } label: {
-            Image("saveInactive")
+            Image(isFavorite ? K.ImageStrings.saveActive : K.ImageStrings.saveInactive)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 66, height: 66)

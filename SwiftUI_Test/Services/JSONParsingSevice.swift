@@ -11,6 +11,7 @@ import Combine
 struct JSONParsingService {
     enum SessionError: Error {
         case statusCode(HTTPURLResponse)
+        case decodingError(Error)
     }
     
     /// Function that wraps the existing dataTaskPublisher method and attempts to decode the result and publish it
@@ -27,6 +28,9 @@ struct JSONParsingService {
                 return data
             })
             .decode(type: T.self, decoder: JSONDecoder())
+            .mapError { error in
+                return SessionError.decodingError(error)
+            }
             .eraseToAnyPublisher()
     }
 }
