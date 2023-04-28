@@ -10,8 +10,17 @@ import Combine
 
 struct JSONParsingService {
     enum SessionError: Error {
-        case statusCode(HTTPURLResponse)
+        case missingDataError
+        case timeoutError
+        case internalServerError
+        case notFound
+        case requestError
         case decodingError(Error)
+    }
+    enum Status: Int {
+        case notFound = 404
+        case requestTimeout = 408
+        case internalServerError = 500
     }
     
     /// Function that wraps the existing dataTaskPublisher method and attempts to decode the result and publish it
@@ -22,9 +31,17 @@ struct JSONParsingService {
             .tryMap({ (data, response) -> Data in
                 if let response = response as? HTTPURLResponse,
                    (200..<300).contains(response.statusCode) == false {
-                    throw SessionError.statusCode(response)
+                    switch Status(rawValue: response.statusCode) {
+                    case .requestTimeout:
+                        throw SessionError.timeoutError
+                    case .internalServerError:
+                        throw SessionError.internalServerError
+                    case .notFound:
+                        throw SessionError.notFound
+                    default:
+                        throw SessionError.requestError
+                    }
                 }
-                
                 return data
             })
             .decode(type: T.self, decoder: JSONDecoder())

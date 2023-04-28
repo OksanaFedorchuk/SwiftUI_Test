@@ -11,8 +11,12 @@ import Combine
 final class VendorsListVM: ObservableObject {
     @Published var vendors = [VendorCardViewItem]()
     @Published var searchText = String()
+    @Published var errorWrapper: ErrorWrapper?
     private let parsingService = JSONParsingService()
     private var cancellables = Set<AnyCancellable>()
+    var hasError: Bool {
+        errorWrapper != nil
+    }
     
     init() {
         subscribeData()
@@ -31,6 +35,9 @@ private extension VendorsListVM {
                             item.companyName.localizedCaseInsensitiveContains(text)
                         }
                         self.vendors = filtered
+                        if self.vendors.isEmpty {
+                            self.errorWrapper = ErrorWrapper.init(errorTitle: "Sorry! No results found...", errorBody: "Please try a different search request or browse businesses from the list.")
+                        }
                     }
                 } else {
                     getVendors()
@@ -46,21 +53,41 @@ private extension VendorsListVM {
     func getVendors(_ completion: @escaping ()->() = {} ) {
         parsingService.dataTaskPublisher(for: jsonURL())
             .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { completion in
+            .sink(receiveCompletion: { [unowned self] completion in
                 switch completion {
                 case .finished:
                     break
+                case .failure(let error as JSONParsingService.SessionError):
+                    assignError(with: error)
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    self.errorWrapper = ErrorWrapper.init(error: error, errorTitle: "Received unknown error: \(error.localizedDescription)", errorBody: "Please try again later.")
                 }
             }) { [unowned self] (users: Vendors) in
                 self.vendors = []
                 users.vendors.forEach {
                     self.vendors.append(mapVendorCardViewItem(with: $0))
                 }
+                self.errorWrapper = nil
                 completion()
             }
             .store(in: &cancellables)
+    }
+    
+    func assignError(with error: JSONParsingService.SessionError) {
+        switch error {
+        case .missingDataError:
+            self.errorWrapper = ErrorWrapper.init(error: error, errorTitle: "Oops, the data is missing.", errorBody: "Please try again later.")
+        case .timeoutError:
+            self.errorWrapper = ErrorWrapper.init(error: error, errorTitle: "Oops, the request has timed out.", errorBody: "Please check your connection.")
+        case .internalServerError:
+            self.errorWrapper = ErrorWrapper.init(error: error, errorTitle: "Oops, there is internal service error.", errorBody: "Please try again later.")
+        case .notFound:
+            self.errorWrapper = ErrorWrapper.init(error: error, errorTitle: "Oops, the data is not found.", errorBody: "Please try again later.")
+        case .requestError:
+            self.errorWrapper = ErrorWrapper.init(error: error, errorTitle: "Oops, there is request error.", errorBody: "Please try again later.")
+        case .decodingError(_):
+            self.errorWrapper = ErrorWrapper.init(error: error, errorTitle: "Oops, we received decoding error.", errorBody: "Please try again later.")
+        }
     }
     
     func mapVendorCardViewItem(with vendor: Vendor) -> VendorCardViewItem {
