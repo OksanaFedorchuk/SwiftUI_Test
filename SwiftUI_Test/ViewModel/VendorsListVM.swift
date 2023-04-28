@@ -14,9 +14,6 @@ final class VendorsListVM: ObservableObject {
     @Published var errorWrapper: ErrorWrapper?
     private let parsingService = JSONParsingService()
     private var cancellables = Set<AnyCancellable>()
-    var hasError: Bool {
-        errorWrapper != nil
-    }
     
     init() {
         subscribeData()
