@@ -8,11 +8,11 @@
 import SwiftUI
 import CoreData
 
-struct VendorsSearchListView: View {
-    @ObservedObject var viewModel: VendorsListVM
+struct VendorsSearchListView<VM: VendorsListProvideable>: View {
+    @ObservedObject var viewModel: VM
     
-    init(viewModel: VendorsListVM) {
-        self.viewModel = viewModel
+    init(viewModel: any VendorsListProvideable) {
+        self.viewModel = viewModel as! VM
     }
     
     var body: some View {
@@ -86,9 +86,9 @@ private extension VendorsSearchListView {
     }
 }
 
-// MARK: - Preview
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        VendorsSearchListView(viewModel: VendorsListVM())
-    }
-}
+//// MARK: - Preview
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        VendorsSearchListView<VendorsListProvideable>(viewModel: VendorsListVM(dataReceiver: JSONParsingService()))
+//    }
+//}

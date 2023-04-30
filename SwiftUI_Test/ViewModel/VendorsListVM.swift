@@ -8,14 +8,21 @@
 import Foundation
 import Combine
 
-final class VendorsListVM: ObservableObject {
+protocol VendorsListProvideable: ObservableObject {
+    var vendors: [VendorCardViewItem] { get set }
+    var searchText:  String { get set }
+    var errorWrapper: ErrorWrapper? { get }
+}
+
+final class VendorsListVM: VendorsListProvideable {
     @Published var vendors = [VendorCardViewItem]()
     @Published var searchText = String()
     @Published var errorWrapper: ErrorWrapper?
-    private let parsingService = JSONParsingService()
+    private let dataReceiver: DataProviding
     private var cancellables = Set<AnyCancellable>()
     
-    init() {
+    init(dataReceiver: DataProviding) {
+        self.dataReceiver = dataReceiver
         subscribeData()
     }
 }
@@ -48,7 +55,7 @@ private extension VendorsListVM {
 // MARK:  - GetVendors
 private extension VendorsListVM {
     func getVendors(_ completion: @escaping ()->() = {} ) {
-        parsingService.dataTaskPublisher(for: jsonURL())
+        dataReceiver.dataTaskPublisher(for: jsonURL())
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { [unowned self] completion in
                 switch completion {

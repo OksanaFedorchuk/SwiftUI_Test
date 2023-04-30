@@ -8,7 +8,11 @@
 import Foundation
 import Combine
 
-struct JSONParsingService {
+protocol DataProviding {
+    func dataTaskPublisher<T: Decodable>(for url: URL) -> AnyPublisher<T, Error>
+}
+
+struct JSONParsingService: DataProviding {
     enum SessionError: Error {
         case missingDataError
         case timeoutError
