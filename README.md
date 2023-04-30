@@ -10,5 +10,4 @@ Test task for middle iOS developer position.
 - Unit tests
 
 Dependencies:
-- [SDWebImage]
-(https://github.com/SDWebImage)
+- [SDWebImage](https://github.com/SDWebImage)
