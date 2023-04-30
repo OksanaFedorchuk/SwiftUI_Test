@@ -8,3 +8,7 @@ Test task for middle iOS developer position.
 - JSONParser mock
 - Error handling
 - Unit tests
+
+Dependencies:
+- [SDWebImage]
+(https://github.com/SDWebImage)
