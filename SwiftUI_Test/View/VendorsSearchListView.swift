@@ -85,10 +85,3 @@ private extension VendorsSearchListView {
         .multilineTextAlignment(.center)
     }
 }
-
-//// MARK: - Preview
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        VendorsSearchListView<VendorsListProvideable>(viewModel: VendorsListVM(dataReceiver: JSONParsingService()))
-//    }
-//}

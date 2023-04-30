@@ -87,12 +87,12 @@ private extension VendorCardView {
         .frame(height: categoriesHeight())
     }
     
-    private func categoriesHeight() -> CGFloat {
+    func categoriesHeight() -> CGFloat {
         let rows = rows().count
         return CGFloat(rows * 22)
     }
     
-    private func rows() -> [GridItem] {
+    func rows() -> [GridItem] {
         guard categories.count > 1 else {
             return [GridItem(.adaptive(minimum: 40))]
         }
@@ -105,7 +105,7 @@ private extension VendorCardView {
         return items
     }
     
-    private struct CategoryView: View {
+    struct CategoryView: View {
         var iconURLString: String
         var categoryName: String
         
