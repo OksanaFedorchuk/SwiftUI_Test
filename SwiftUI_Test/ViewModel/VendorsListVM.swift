@@ -12,10 +12,11 @@ final class VendorsListVM: ObservableObject {
     @Published var vendors = [VendorCardViewItem]()
     @Published var searchText = String()
     @Published var errorWrapper: ErrorWrapper?
-    private let parsingService = JSONParsingService()
+    private let dataReceiver: DataProviding
     private var cancellables = Set<AnyCancellable>()
     
-    init() {
+    init(dataReceiver: DataProviding) {
+        self.dataReceiver = dataReceiver
         subscribeData()
     }
 }
@@ -48,7 +49,7 @@ private extension VendorsListVM {
 // MARK:  - GetVendors
 private extension VendorsListVM {
     func getVendors(_ completion: @escaping ()->() = {} ) {
-        parsingService.dataTaskPublisher(for: jsonURL())
+        dataReceiver.dataTaskPublisher(for: jsonURL())
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { [unowned self] completion in
                 switch completion {

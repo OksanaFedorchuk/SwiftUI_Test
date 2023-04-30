@@ -11,7 +11,7 @@ import SDWebImageSVGCoder
 
 @main
 struct SwiftUI_TestApp: App {
-    let viewModel = VendorsListVM()
+    let viewModel = VendorsListVM(dataReceiver: JSONParsingService())
     
     init() {
         setUpSVGCoder()

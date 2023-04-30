@@ -89,6 +89,6 @@ private extension VendorsSearchListView {
 // MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        VendorsSearchListView(viewModel: VendorsListVM())
+        VendorsSearchListView(viewModel: VendorsListVM(dataReceiver: JSONParsingService()))
     }
 }
