@@ -11,7 +11,7 @@ import SDWebImageSVGCoder
 
 @main
 struct SwiftUI_TestApp: App {
-    let viewModel = VendorsListVM(dataReceiver: JSONParsingService())
+    private let viewModel = VendorsListVM(dataReceiver: JSONParsingService())
     
     init() {
         setUpSVGCoder()
@@ -19,7 +19,7 @@ struct SwiftUI_TestApp: App {
     
     var body: some Scene {
         WindowGroup {
-            VendorsSearchListView(viewModel: viewModel)
+            VendorsSearchListView<VendorsListVM>(viewModel: viewModel)
         }
     }
 }

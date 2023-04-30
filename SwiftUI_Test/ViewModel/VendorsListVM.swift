@@ -8,7 +8,13 @@
 import Foundation
 import Combine
 
-final class VendorsListVM: ObservableObject {
+protocol VendorsListProvideable: ObservableObject {
+    var vendors: [VendorCardViewItem] { get set }
+    var searchText:  String { get set }
+    var errorWrapper: ErrorWrapper? { get }
+}
+
+final class VendorsListVM: VendorsListProvideable {
     @Published var vendors = [VendorCardViewItem]()
     @Published var searchText = String()
     @Published var errorWrapper: ErrorWrapper?
